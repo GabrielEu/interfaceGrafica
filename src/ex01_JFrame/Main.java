@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//Instanciar JFrame
+		//Instanciar JFrame 
 		JFrame formulario = new JFrame();
 		formulario.setVisible(true);
 		formulario.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
