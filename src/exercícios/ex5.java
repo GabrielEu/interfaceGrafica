@@ -12,19 +12,47 @@ import java.util.ArrayList;
 public class ex5 {
 
 	public static void main(String[] args) {
-		
-		//Variáveis
-		ArrayList<Integer> finalSemana = new ArrayList<Integer>(), diaSemana = new ArrayList<Integer>();
-		
-		for(int i = 0; i < 28; i++) {
-			
-			if((i != 3) || (i != 10) || (i != 17) || (i != 24) || (i != 4) || (i != 11) || (i != 18) || (i != 25)) {
-				diaSemana.add(i);
-			} else {
-				finalSemana.add(i);
-			}
-		}
 	
+		int[] diaSemana = new int[20];
+		int[] finalSemana = new int[8];
+		
+		diaSemana[0] = 1;
+		diaSemana[1] = 2;
+		
+			finalSemana[0] = 3;
+			finalSemana[1] = 4;
+		
+		diaSemana[2] = 5;
+		diaSemana[3] = 6;
+		diaSemana[4] = 7;
+		diaSemana[5] = 8;
+		diaSemana[6] = 9;
+		
+			finalSemana[2] = 10;
+			finalSemana[3] = 11;
+		
+		diaSemana[7] = 12;
+		diaSemana[8] = 13;
+		diaSemana[9] = 14;
+		diaSemana[10] = 15;
+		diaSemana[11] = 16;
+		
+			finalSemana[4] = 17;
+			finalSemana[5] = 18;
+		
+		diaSemana[12] = 19;
+		diaSemana[13] = 20;
+		diaSemana[14] = 21;
+		diaSemana[15] = 22;
+		diaSemana[16] = 23;
+		
+			finalSemana[6] = 24;
+			finalSemana[7] = 25;
+		
+		diaSemana[17] = 26;
+		diaSemana[18] = 27;
+		diaSemana[19] = 28;
+
 		// JFrame
 		JFrame construtor = new JFrame();
 		construtor.setSize(280, 150);
@@ -51,17 +79,28 @@ public class ex5 {
 				
 				int dia = Integer.parseInt(campo.getText());
 				
-				for(int i = 0; i < 28; i++) {
-					if(dia == diaSemana<i>) {
+				for(int i = 0; i < 20; i++) {
+					
+					if(dia == diaSemana[i]) {
 						JOptionPane.showMessageDialog(null, "Será dia de semana");
-					} else if(dia == finalSemana(i)) {
-						JOptionPane.showMessageDialog(null, "Será final de semana");
-					} else {
-						JOptionPane.showMessageDialog(null, "Esse dia não existe");
 					}
 				}
+				
+				for(int i = 0; i < 8; i++) {
+					
+					if(dia == finalSemana[i]) {
+						JOptionPane.showMessageDialog(null, "Será fim de semana");
+					}
+				}
+				
+				if((dia <= 0) || (dia > 28)){
+					JOptionPane.showMessageDialog(null, "Esse dia não existe");
+				}
+				
 			}
+			
 		});
+		
 		
 		construtor.add(digite);
 		construtor.add(campo);
