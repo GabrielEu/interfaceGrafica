@@ -2,26 +2,26 @@ package exercícios;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import java.util.ArrayList;
 
 public class ex5 {
 
 	public static void main(String[] args) {
 		
 		//Variáveis
-		ArrayList<int> finalSemana = new ArrayList<int>(), diaSemana = new ArrayList<int>();
+		ArrayList<Integer> finalSemana = new ArrayList<Integer>(), diaSemana = new ArrayList<Integer>();
 		
 		for(int i = 0; i < 28; i++) {
 			
 			if((i != 3) || (i != 10) || (i != 17) || (i != 24) || (i != 4) || (i != 11) || (i != 18) || (i != 25)) {
-				diaSemana = i;
+				diaSemana.add(i);
 			} else {
-				finalSemana = i;
+				finalSemana.add(i);
 			}
 		}
 	
@@ -51,14 +51,15 @@ public class ex5 {
 				
 				int dia = Integer.parseInt(campo.getText());
 				
-				if(dia == diaSemana) {
-					JOptionPane.showMessageDialog(null, "Será dia de semana");
-				} else if(dia == finalSemana) {
-					JOptionPane.showMessageDialog(null, "Será final de semana");
-				} else {
-					JOptionPane.showMessageDialog(null, "Esse dia não existe");
+				for(int i = 0; i < 28; i++) {
+					if(dia == diaSemana<i>) {
+						JOptionPane.showMessageDialog(null, "Será dia de semana");
+					} else if(dia == finalSemana(i)) {
+						JOptionPane.showMessageDialog(null, "Será final de semana");
+					} else {
+						JOptionPane.showMessageDialog(null, "Esse dia não existe");
+					}
 				}
-				
 			}
 		});
 		
